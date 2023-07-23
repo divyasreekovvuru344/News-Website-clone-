@@ -26,7 +26,12 @@ function bindData(articles) {
             fillDataInCard(cardClone, article);
             cardsContainer.appendChild(cardClone);
         });
-    } 
+    } else {
+        const errorCard = document.createElement("div");
+        errorCard.classList.add("error-card");
+        errorCard.innerText = "No articles found";
+        cardsContainer.appendChild(errorCard);
+    }
 }
 
 function fillDataInCard(cardClone, article) {
